@@ -1,0 +1,25 @@
+Hardcode in HTML:
+1) Wrapper container
+2) Matrix container
+3) Tool bar container
+4) Storage container
+    1) Matrix
+    a) 2d Array
+        [
+        [0,0,0,0,0,0,0,0],
+        [0,1,1,0,0,0,0,0],
+        [0,2,0,0,0,0,0,0],
+        []
+        ]
+        b) We loop over this 2d array and attach classes to them.
+         1) sky,leafs,trunk,rocks,dirt,lava, [tile]
+    2) Tool bar
+        a) create an array of tools ["axe", "pick-axe", "shovel"] or create an object with the name and img url
+        b) loop creates divs with classes and put them in the DOM
+    3) Storage place
+    a) create one div and attach a class
+
+
+
+    
+    4) Connect everything together
