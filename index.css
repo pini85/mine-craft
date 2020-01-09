@@ -35,13 +35,15 @@ body {
 .tool {
   height: 22%;
   width: 34%;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .tile {
   /* border: 1px solid black; */
   width: 8.3%;
   height: 6.25%;
-  background: red;
+  background: skyblue;
 }
 
 .sky {
@@ -65,5 +67,35 @@ body {
 }
 
 .ground {
+  background: chocolate;
+}
+
+#storage {
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.inventory {
+  height: 22%;
+  width: 34%;
+  background: lightgray;
+}
+
+.inventory.rock {
+  background: gray;
+}
+.inventory.leaf {
+  background: lightgreen;
+}
+.inventory.trunk {
+  background: brown;
+}
+.inventory.grass {
+  background: green;
+}
+.inventory.ground {
   background: chocolate;
 }
