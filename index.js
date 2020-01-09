@@ -122,8 +122,7 @@ mineCraft.mining = event => {
       event.target.className = "tile";
       mineCraft.currentMaterial = tile;
       typeInText.innerHTML = tile;
-
-      mineCraft.removeFromWorld = false;
+      nromWorld = false;
       mineCraft.builder = true;
     }
 
