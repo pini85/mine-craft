@@ -70,8 +70,12 @@ body {
   background: chocolate;
 }
 
+.wrapper {
+  text-align: center;
+}
+
 #storage {
-  height: 50%;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -79,8 +83,8 @@ body {
 }
 
 .inventory {
-  height: 22%;
-  width: 34%;
+  height: 6rem;
+  width: 6rem;
   background: lightgray;
 }
 
