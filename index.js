@@ -1,4 +1,5 @@
 const mineCraft = {};
+
 mineCraft.currentTool = "";
 mineCraft.currentMaterial = "";
 mineCraft.removeFromWorld = true;
@@ -11,6 +12,7 @@ mineCraft.start = () => {
 };
 
 mineCraft.matrix = () => {
+  //0= sky
   // 1= leaf,
   // 2= trunk
   // 3 = rock
@@ -32,13 +34,13 @@ mineCraft.matrix = () => {
     [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
     [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5],
     [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5],
-    [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+    [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5],
   ];
   for (let i = 0; i < matrix.length; i++) {
     for (let j = 0; j < matrix[i].length; j++) {
       const target = document.getElementById("matrix");
       const el = document.createElement("div");
-      el.addEventListener("click", e => {
+      el.addEventListener("click", (e) => {
         if (mineCraft.removeFromWorld) {
           mineCraft.mining(e);
         } else if (!mineCraft.removeFromWorld) {
@@ -82,19 +84,19 @@ mineCraft.toolBar = () => {
   const toolKit = [
     {
       name: "axe",
-      url: "./img/axe.jpg"
+      url: "./img/axe.jpg",
     },
     {
       name: "pickAxe",
-      url: "./img/pickaxe.jpg"
+      url: "./img/pickaxe.jpg",
     },
     {
       name: "shovel",
-      url: "./img/shovel.jpg"
-    }
+      url: "./img/shovel.jpg",
+    },
   ];
 
-  toolKit.forEach(tool => {
+  toolKit.forEach((tool) => {
     const target = document.getElementById("tool-bar");
     const el = document.createElement("div");
     el.classList.add("tool", tool.name);
@@ -113,7 +115,7 @@ mineCraft.inventory = () => {
   target.appendChild(el);
 };
 
-mineCraft.mining = event => {
+mineCraft.mining = (event) => {
   let tile = event.target.getAttribute("data-type");
   let tool = mineCraft.currentTool;
   if (mineCraft.removeFromWorld) {
@@ -122,7 +124,7 @@ mineCraft.mining = event => {
       event.target.className = "tile";
       mineCraft.currentMaterial = tile;
       typeInText.innerHTML = tile;
-      nromWorld = false;
+      mineCraft.removeFromWorld = false;
       mineCraft.builder = true;
     }
 
@@ -146,11 +148,13 @@ mineCraft.mining = event => {
   }
 };
 
-mineCraft.building = e => {
+mineCraft.building = (e) => {
   if (mineCraft.builder) {
     if (e.target.getAttribute("data-type") === "sky") {
+      const inventory = document.querySelector(".inventory");
       e.target.className = `tile ${mineCraft.currentMaterial}`;
-      document.querySelector(".inventory").className = "inventory";
+      inventory.className = "inventory";
+      inventory.style.border = "none";
       document.querySelector(".type").innerHTML = "Nothing";
       mineCraft.builder = false;
       mineCraft.removeFromWorld = true;
@@ -158,12 +162,20 @@ mineCraft.building = e => {
   }
 };
 
-mineCraft.pickedTool = event => {
+mineCraft.pickedTool = (event) => {
+  const tools = document.querySelectorAll(".tool");
+  tools.forEach((el) => {
+    el.style.border = "none";
+  });
   mineCraft.currentTool = event.target.getAttribute("data-type-tool");
+  event.target.style.border = "2px solid skyBlue";
 };
 
-mineCraft.pickStorage = event => {
+mineCraft.pickStorage = (event) => {
   mineCraft.currentMaterial = event.target.classList[1];
+  if (mineCraft.currentMaterial) {
+    event.target.style.border = "2px solid skyBlue";
+  }
 };
 mineCraft.reset = () => {
   document.getElementById("matrix").innerHTML = "";
