@@ -51,23 +51,28 @@ body {
 }
 
 .leaf {
-  background: lightgreen;
+  background-image: url("./img/leaf.png");
+  background-size: cover;
 }
 
 .trunk {
-  background: brown;
+  background-image: url("./img/trunk.jpg");
+  background-size: cover;
 }
 
 .rock {
-  background: gray;
+  background-image: url("./img/rock.png");
+  background-size: cover;
 }
 
 .grass {
-  background: green;
+  background-image: url("./img/grass.png");
+  background-size: cover;
 }
 
 .ground {
-  background: chocolate;
+  background-image: url("./img/dirt.jpg");
+  background-size: cover;
 }
 
 .wrapper {
@@ -89,17 +94,22 @@ body {
 }
 
 .inventory.rock {
-  background: gray;
+  background-image: url("./img/rock.png");
+  background-size: cover;
 }
 .inventory.leaf {
-  background: lightgreen;
+  background-image: url("./img/leaf.png");
+  background-size: cover;
 }
 .inventory.trunk {
-  background: brown;
+  background-image: url("./img/trunk.jpg");
+  background-size: cover;
 }
 .inventory.grass {
-  background: green;
+  background-image: url("./img/grass.png");
+  background-size: cover;
 }
 .inventory.ground {
-  background: chocolate;
+  background-image: url("./img/dirt.jpg");
+  background-size: cover;
 }

@@ -4,7 +4,9 @@ mineCraft.currentTool = "";
 mineCraft.currentMaterial = "";
 mineCraft.removeFromWorld = true;
 mineCraft.builder = true;
-
+mineCraft.menu = () => {
+  const el = document.document.createElement("div");
+};
 mineCraft.start = () => {
   mineCraft.matrix();
   mineCraft.toolBar();
@@ -117,6 +119,7 @@ mineCraft.inventory = () => {
 
 mineCraft.mining = (event) => {
   let tile = event.target.getAttribute("data-type");
+
   let tool = mineCraft.currentTool;
   if (mineCraft.removeFromWorld) {
     let typeInText = document.querySelector(".type");
@@ -143,6 +146,7 @@ mineCraft.mining = (event) => {
       mineCraft.removeFromWorld = false;
       mineCraft.builder = true;
     }
+
     const inventoryEl = document.querySelector(".inventory");
     inventoryEl.className = `inventory ${mineCraft.currentMaterial}`;
   }
@@ -156,6 +160,7 @@ mineCraft.building = (e) => {
       inventory.className = "inventory";
       inventory.style.border = "none";
       document.querySelector(".type").innerHTML = "Nothing";
+      mineCraft.currentMaterial = null;
       mineCraft.builder = false;
       mineCraft.removeFromWorld = true;
     }
