@@ -1,5 +1,7 @@
 * {
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 body {
@@ -21,6 +23,7 @@ body {
 #right-container {
   display: flex;
   flex-direction: column;
+  text-align: center;
   height: 100vh;
   width: 30vw;
 }
@@ -39,11 +42,27 @@ body {
   background-position: center;
 }
 
+#storage {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  overflow: auto;
+  gap: 0.5rem;
+}
+@media only screen and (max-width: 450px) {
+  #storage {
+    justify-content: center;
+  }
+}
+
+.material-type {
+  margin: 2rem;
+}
+
 .tile {
-  /* border: 1px solid black; */
   width: 8.3%;
   height: 6.25%;
-  background: skyblue;
+  /* border: 1px solid black; */
 }
 
 .sky {
@@ -51,40 +70,28 @@ body {
 }
 
 .leaf {
-  background-image: url("./img/leaf.png");
-  background-size: cover;
+  background: green;
 }
-
 .trunk {
-  background-image: url("./img/trunk.jpg");
-  background-size: cover;
+  background: burlywood;
 }
-
 .rock {
-  background-image: url("./img/rock.png");
-  background-size: cover;
+  background: gray;
 }
-
 .grass {
-  background-image: url("./img/grass.png");
-  background-size: cover;
+  background: yellowgreen;
 }
 
-.ground {
-  background-image: url("./img/dirt.jpg");
-  background-size: cover;
+.dirt {
+  background: brown;
 }
 
-.wrapper {
+.tool-item {
   text-align: center;
 }
 
-#storage {
-  height: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+.selected {
+  border: 2px solid red;
 }
 
 .inventory {
@@ -93,23 +100,7 @@ body {
   background: lightgray;
 }
 
-.inventory.rock {
-  background-image: url("./img/rock.png");
-  background-size: cover;
-}
-.inventory.leaf {
-  background-image: url("./img/leaf.png");
-  background-size: cover;
-}
-.inventory.trunk {
-  background-image: url("./img/trunk.jpg");
-  background-size: cover;
-}
-.inventory.grass {
-  background-image: url("./img/grass.png");
-  background-size: cover;
-}
-.inventory.ground {
-  background-image: url("./img/dirt.jpg");
-  background-size: cover;
+.storage-item {
+  width: 2rem;
+  height: 2rem;
 }
