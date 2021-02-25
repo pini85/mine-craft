@@ -15,9 +15,13 @@
   -- pickAxe > rocks
   -- shovel > dirt
 
-# current material I have in my inventory
+# materialTypes I have for the world
 
-# current tool I have in my inventory
+# an empty array to store my materials mined
+
+# current material I have mined from the world
+
+# current tool i choose from my inventory
 
 ## remove from the world = true or false
 
@@ -25,7 +29,7 @@
 
 # Put all my tool kits in the tool-bar div
 
-#
+# Create a material type for my world elements
 
 Logic of the game
 

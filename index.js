@@ -4,6 +4,14 @@ const state = {
     { name: "pickAxe", url: "./img/pickaxe.jpg", remove: ["rock"] },
     { name: "shovel", url: "./img/shovel.jpg", remove: ["dirt", "grass"] },
   ],
+  materialTypes: {
+    0: "sky",
+    1: "leaf",
+    2: "trunk",
+    3: "rock",
+    4: "grass",
+    5: "dirt",
+  },
   storage: [],
   currentMaterial: "",
   currentTool: "",
@@ -57,26 +65,27 @@ const createWorld = () => {
       //   }
       // });
       element.classList.add("tile");
-      element.dataset.position = [row, col];
+      // element.dataset.position = [row, col];
       matrixContainer.appendChild(element);
+      const materialType = state.materialTypes[matrix[row][col]];
       switch (matrix[row][col]) {
         case 0:
-          element.classList.add("sky");
+          element.classList.add(materialType);
           break;
         case 1:
-          element.classList.add("leaf");
+          element.classList.add(materialType);
           break;
         case 2:
-          element.classList.add("trunk");
+          element.classList.add(materialType);
           break;
         case 3:
-          element.classList.add("rock");
+          element.classList.add(materialType);
           break;
         case 4:
-          element.classList.add("grass");
+          element.classList.add(materialType);
           break;
         case 5:
-          element.classList.add("dirt");
+          element.classList.add(materialType);
           break;
         default:
           break;
