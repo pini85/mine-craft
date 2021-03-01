@@ -1,14 +1,16 @@
 1. Create The HTML
+
 2. Create the CSS
+
 3. Create The World
 
-# Create a matrix with different numbers that will correspond to the different elements on the screen
+   # Create a matrix with different numbers that will correspond to the different elements on the screen
 
-# loop over my matrix, on each loop ill create a div and assign a different class depending on the number.
+   # loop over my matrix, on each loop ill create a div and assign a different class depending on the number.
 
-3. Create an Object the will hold my games state
+4. Create an Object the will hold my games state
 
-# my different tools
+   # my different tools
 
 - inside my tools name of tool, image of tool, and what element it can remove
   -- axe > trees
@@ -16,6 +18,8 @@
   -- shovel > dirt
 
 # materialTypes I have for the world
+
+- sky,leafs,trunk, rock, dirt
 
 # an empty array to store my materials mined
 
@@ -28,8 +32,6 @@
 4.  Populate my html
 
 # Put all my tool kits in the tool-bar div
-
-# Create a material type for my world elements
 
 Logic of the game
 
@@ -45,8 +47,8 @@ Logic of the game
 
 # change current tool to the tool you clicked on
 
-# style current tool in a border color
-
 3.  Remove Element from the world
 
 # find out what element you need to remove
+
+# style current tool in a border color

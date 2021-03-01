@@ -70,22 +70,29 @@ body {
 }
 
 .leaf {
-  background: green;
+  background-image: url("./img/leaf.png");
+  background-size: cover;
 }
+
 .trunk {
-  background: burlywood;
+  background-image: url("./img/trunk.jpg");
+  background-size: cover;
 }
+
 .rock {
-  background: gray;
+  background-image: url("./img/rock.png");
+  background-size: cover;
 }
+
 .grass {
-  background: yellowgreen;
+  background-image: url("./img/grass.png");
+  background-size: cover;
 }
 
 .dirt {
-  background: brown;
+  background-image: url("./img/dirt.jpg");
+  background-size: cover;
 }
-
 .tool-item {
   text-align: center;
 }

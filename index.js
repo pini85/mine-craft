@@ -67,7 +67,9 @@ const createWorld = () => {
       element.classList.add("tile");
       // element.dataset.position = [row, col];
       matrixContainer.appendChild(element);
+
       const materialType = state.materialTypes[matrix[row][col]];
+      console.log(materialType);
       switch (matrix[row][col]) {
         case 0:
           element.classList.add(materialType);
@@ -128,6 +130,7 @@ const pickTool = (e, tool) => {
 
 const building = ({ target }) => {
   const worldMaterial = target.className.split(" ")[1];
+  console.log(state.currentMaterial);
   const storageMaterial = state.currentMaterial.className.split(" ")[1];
 
   target.classList.remove(worldMaterial);
@@ -144,24 +147,25 @@ const building = ({ target }) => {
 };
 const mining = (e) => {
   const materialType = document.querySelector(".material-type");
+
   const material = e.target.className.split(" ")[1];
   state.tools.forEach((tool) => {
     if (tool.name === state.currentTool && tool.remove.includes(material)) {
       createStorage(material);
       e.target.classList.remove(material);
+      e.target.classList.add(state.materialTypes[0]);
       materialType.textContent =
         material.slice(0, 1).toUpperCase() + material.slice(1);
     }
   });
 
   //need to get the current material being mined
-  //need to compare the tool I currently have to the remove value from my tools.remove
+  //need to compare the tool I currently have to the remove value from my tools
   //once mined need to put that in my inventory
   //user can save n amount of material
 };
 const createStorage = (material) => {
   state.storage.push(material);
-
   const container = document.querySelector("#storage");
   const materialEl = document.createElement("div");
   materialEl.classList.add("storage-item");
@@ -177,15 +181,15 @@ const createStorage = (material) => {
   //allow to place material to world
 };
 const pickMaterial = ({ target }) => {
-  const materials = document.querySelectorAll(".storage-item");
-  state.currentMaterial = target;
-
   state.removeFromWorld = false;
+  state.currentMaterial = target;
+  const materials = document.querySelectorAll(".storage-item");
+  const tools = document.querySelectorAll(".tool-item");
+
   materials.forEach((material) => {
     material.classList.remove("selected");
   });
   target.classList.add("selected");
-  const tools = document.querySelectorAll(".tool-item");
   tools.forEach((tool) => {
     tool.classList.remove("selected");
   });
